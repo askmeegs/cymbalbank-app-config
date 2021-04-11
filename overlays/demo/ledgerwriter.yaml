@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: userservice
-  namespace: userservice
+  name: ledgerwriter
+  namespace: ledgerwriter
 spec:
   selector:
     matchLabels:
-      app: userservice
+      app: ledgerwriter
   template: 
     spec: 
       containers:
-      - name: userservice
-        image: userservice
+      - name: ledgerwriter
+        image: gcr.io/bank-of-anthos/ledgerwriter:v0.4.3
         env:
         - name: ENABLE_TRACING
           value: "true"

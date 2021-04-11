@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: userservice
-  namespace: userservice
+  name: transactionhistory
+  namespace: transactionhistory
 spec:
   selector:
     matchLabels:
-      app: userservice
+      app: transactionhistory
   template: 
     spec: 
       containers:
-      - name: userservice
-        image: userservice
+      - name: transactionhistory
+        image: gcr.io/bank-of-anthos/transactionhistory:v0.4.3
         env:
         - name: ENABLE_TRACING
           value: "true"

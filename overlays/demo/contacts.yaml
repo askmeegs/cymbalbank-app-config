@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: userservice
-  namespace: userservice
+  name: contacts
+  namespace: contacts
 spec:
   selector:
     matchLabels:
-      app: userservice
+      app: contacts
   template: 
     spec: 
       containers:
-      - name: userservice
-        image: userservice
+      - name: contacts
+        image: gcr.io/bank-of-anthos/contacts:v0.4.3
         env:
         - name: ENABLE_TRACING
           value: "true"

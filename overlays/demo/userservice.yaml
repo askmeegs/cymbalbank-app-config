@@ -11,7 +11,7 @@ spec:
     spec: 
       containers:
       - name: userservice
-        image: userservice
+        image: gcr.io/bank-of-anthos/userservice:v0.4.3
         env:
         - name: ENABLE_TRACING
           value: "true"

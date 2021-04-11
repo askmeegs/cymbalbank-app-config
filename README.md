@@ -16,4 +16,4 @@ The `overlays/` directory contains two deployment overlays (options) for CymbalB
 | 🚀 **Prod** | on      | on      | `info`    | 3                   |
 
 
-Note that the staging pipeline for the intro-to-krm demo uses the `prod` overlay. 
+**Note**: the `demo` overlay is identical to the `prod` overlay except that it uses pre-baked images at `gcr.io/bank-of-anthos` for demo purposes. 

@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: userservice
-  namespace: userservice
+  name: balancereader
+  namespace: balancereader
 spec:
   selector:
     matchLabels:
-      app: userservice
+      app: balancereader
   template: 
     spec: 
       containers:
-      - name: userservice
-        image: userservice
+      - name: balancereader
+        image: gcr.io/bank-of-anthos/balancereader:v0.4.3
         env:
         - name: ENABLE_TRACING
           value: "true"
