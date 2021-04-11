@@ -12,7 +12,6 @@ spec:
     spec: 
       containers:
       - name: front
-        image: frontend
         env:
         - name: ENABLE_TRACING
           value: "true"
