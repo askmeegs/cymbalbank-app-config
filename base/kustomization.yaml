@@ -10,3 +10,4 @@ resources:
 - transactionhistory.yaml
 - userservice.yaml
 - frontend.yaml
+- test-workload.yaml
