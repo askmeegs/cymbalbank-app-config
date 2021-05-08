@@ -3,12 +3,12 @@ steps:
 - id: 'Render prod manifests'
   name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: '/bin/sh'
-  args: ['-c', 'mkdir hydrated-manifests && kubectl kustomize overlays/prod > hydrated-manifests/prod.yaml']
+  args: ['-c', 'mkdir hydrated-manifests && kubectl kustomize overlays/prod > hydrated-manifests/prod.yaml ** cat hydrated-manifests/prod.yaml']
 - id: 'Clone cymbalbank-policy repo'
   name: 'gcr.io/kpt-dev/kpt'
   entrypoint: '/bin/sh'
   args: ['-c', 'kpt pkg get https://github.com/$$GITHUB_USERNAME/cymbalbank-policy.git@main constraints
-                  && kpt fn source constraints/ hydrated-manifests/ > hydrated-manifests/kpt-manifests.yaml']
+                  && kpt fn source constraints/ hydrated-manifests/ > hydrated-manifests/kpt-manifests.yaml && cat hydrated-manifests/kpt-manifests.yaml']
   secretEnv: ['GITHUB_USERNAME']
 - id: 'Validate prod manifests against policies'
   name: 'gcr.io/config-management-release/policy-controller-validate'
