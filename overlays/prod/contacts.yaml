@@ -11,7 +11,7 @@ spec:
     spec: 
       containers:
       - name: contacts
-        image: gcr.io/bank-of-anthos/contacts:v0.4.3
+        image: gcr.io/krm-nov27/cymbal-bank/release/contacts:112afc7
         env:
         - name: ENABLE_TRACING
           value: "true"
